@@ -7,14 +7,23 @@ import net.mrdoc.revloapi.exception.RevloException;
  *
  * @author Doc
  */
-public class Core extends API {
+public class Core {
 
-    private static String APIKEY = "TgLgg09RRIsgQIFmklnWmyJJ2QjZc9SWPtVHwHrjBXY";
+    private static String APIKEY = "kTJSQMjs3R3kh3CIRZirIe89CfwbEAPHtcD_eO56LONw";
 
+    /**
+     * TEST API
+     * @param args not used ;3
+     */
     public static void main(String[] args) {
         try {
             RevloAPI api = new RevloAPI(getAPIKEY());
-            api.getRewards();
+            //api.getRewards();
+            //api.getRedemptions();
+            api.setDEBUGMODE(true);
+            api.getFan("thedoc94");
+            api.giveBonus("thedoc94",1000);
+            //api.getFan("nullsupernull");
         } catch (RevloException e) {
             e.printStackTrace();
         }

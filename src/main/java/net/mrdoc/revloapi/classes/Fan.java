@@ -1,5 +1,6 @@
 package net.mrdoc.revloapi.classes;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -7,14 +8,14 @@ import java.util.Date;
  *
  * @author Doc
  */
-public class Fan { //{"loyalty":{"fan":"pokemaniac","total_points":0,"current_points":100,"updated_at":"2016-09-14T16:02:00.000Z"}}
+public class Fan {
 
     final private String NAME;
     final private int TOTAL_POINTS;
     final private int CURRENT_POINTS;
-    final private Date UPDATED_AT;
+    final private LocalDateTime UPDATED_AT;
 
-    public Fan(String name, int totalpoints, int currentpoints, Date updateat) {
+    public Fan(String name, int totalpoints, int currentpoints, LocalDateTime updateat) {
         this.NAME = name;
         this.TOTAL_POINTS = totalpoints;
         this.CURRENT_POINTS = currentpoints;
@@ -34,7 +35,7 @@ public class Fan { //{"loyalty":{"fan":"pokemaniac","total_points":0,"current_po
         return CURRENT_POINTS;
     }
 
-    public Date getUPDATED_AT() {
+    public LocalDateTime getUPDATED_AT() {
         return UPDATED_AT;
     }
 }

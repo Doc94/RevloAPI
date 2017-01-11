@@ -1,6 +1,7 @@
 package net.mrdoc.revloapi.classes;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
 
 /**
  * Created by Doc on 11-01-2017.
@@ -14,14 +15,14 @@ public class Redemption {
     final private LocalDateTime CREATED_AT;
     final private boolean REFUNDED;
     final private boolean COMPLETED;
-    final private String USERINPUT;
+    final private HashMap<String,String> USERINPUT; //WIP
     final private String USERNAME;
 
-    public Redemption(Reward reward, int id, LocalDateTime createdat, String test, String username, boolean refunded, boolean completed) {
+    public Redemption(Reward reward, int id, LocalDateTime createdat, String username, HashMap<String,String> userinputs, boolean refunded, boolean completed) {
         this.REWARD = reward;
         this.REDEMPTION_ID = id;
         this.CREATED_AT = createdat;
-        this.USERINPUT = test;
+        this.USERINPUT = userinputs;
         this.USERNAME = username;
         this.REFUNDED = refunded;
         this.COMPLETED = completed;
@@ -70,7 +71,13 @@ public class Redemption {
         return COMPLETED;
     }
 
-    public String getUSERINPUT() {
+    /**
+     * Get the inputs for user
+     * <br>
+     * Key is a type of input and Valiue is a value for input
+     * @return HashMap with inputs
+     */
+    public HashMap<String, String> getUSERINPUTS() {
         return USERINPUT;
     }
 
