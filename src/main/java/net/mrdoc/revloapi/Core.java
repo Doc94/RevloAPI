@@ -9,7 +9,7 @@ import net.mrdoc.revloapi.exception.RevloException;
  */
 public class Core {
 
-    private static String APIKEY = "kTJSQMjs3R3kh3CIRZirIe89CfwbEAPHtcD_eO56LONw";
+    private static String APIKEY = "anotherkey heuhuehue";
 
     /**
      * TEST API

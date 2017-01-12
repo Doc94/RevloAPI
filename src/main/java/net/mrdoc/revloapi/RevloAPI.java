@@ -251,9 +251,14 @@ public class RevloAPI {
         JSONObject bonusParameters = new JSONObject();
         bonusParameters.put("amount",amount);
 
-        JSONObject jsonResponse = RevloUtils.POSTRequestJSON(DEBUGMODE,RevloAPI.BASEURL,"fans/"+twichname+"",bonusParameters,KEY);
+        JSONObject jsonResponse = RevloUtils.POSTRequestJSON(DEBUGMODE,RevloAPI.BASEURL,"fans/"+twichname+"/points/bonus",bonusParameters,KEY);
 
-        JSONObject jsonFan = jsonResponse.getJSONObject("loyalty");
+        JSONObject jsonFan = null;
+        if (jsonResponse != null) {
+            jsonFan = jsonResponse.getJSONObject("loyalty");
+        } else {
+            throw new RevloException("Failed: The response its invalid.");
+        }
 
         Fan fan = new Fan(
                 jsonFan.getString("fan"),
