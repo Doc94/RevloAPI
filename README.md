@@ -13,6 +13,33 @@ cd RevloAPI
 mvn clean install
 ```
 
-## Installation
+## Basic Example
+Here show a basic example for use the API (More examples in wiki)
+```java
+package net.mrdoc.examplerevloapi;
 
-WIP
+import net.mrdoc.revloapi.exception.RevloException;
+
+/**
+ * Created by Doc on 10-01-2017.
+ *
+ * @author Doc
+ */
+public class RevloExample {
+
+    /**
+     * AutoRun this
+     * @param args not need here
+     */
+    public static void main(String[] args) {
+        try {
+            RevloAPI api = new RevloAPI("MyAPIKey"));
+            
+            //i need see debug code (?
+            api.setDEBUGMODE(true);
+        } catch (RevloException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```

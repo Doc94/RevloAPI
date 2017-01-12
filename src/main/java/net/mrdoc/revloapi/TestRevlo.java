@@ -7,9 +7,7 @@ import net.mrdoc.revloapi.exception.RevloException;
  *
  * @author Doc
  */
-public class Core {
-
-    private static String APIKEY = "anotherkey heuhuehue";
+public class TestRevlo {
 
     /**
      * TEST API
@@ -17,24 +15,16 @@ public class Core {
      */
     public static void main(String[] args) {
         try {
-            RevloAPI api = new RevloAPI(getAPIKEY());
+            RevloAPI api = new RevloAPI("MySweetAPIKey");
             //api.getRewards();
             //api.getRedemptions();
             api.setDEBUGMODE(true);
-            api.getFan("thedoc94");
-            api.giveBonus("thedoc94",1000);
+            api.getFan("thedoc94s");
+            api.giveBonus("thedoc94s",1000);
             //api.getFan("nullsupernull");
         } catch (RevloException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void setAPIKEY(String key) {
-        APIKEY = key;
-    }
-
-    public static String getAPIKEY() {
-        return APIKEY;
     }
 
 }
