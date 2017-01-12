@@ -1,4 +1,4 @@
-<img align="right" src="http://i.imgur.com/EyEKykn.png" height="320" width="320">
+<img align="right" src="http://i.imgur.com/HXSvCsC.jpg" height="320" width="320">
 
 # RevloAPI
 
