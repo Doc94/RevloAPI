@@ -3,6 +3,7 @@
 # RevloAPI
 
 RevloAPI brings [Revlo](https://revlo.co) and Java Plataform together. This is made for developers that want to use Revlo on their Java Projects to get Information in reference to Revlo API.
+Based in [RevloDocumentation](https://github.com/teamrevlo/revloapi)
 
 ## Installation
 RevloAPI is distributed as a [maven](http://maven.apache.org/) project. To compile it and install it in your local Maven repository (.m2) use:
