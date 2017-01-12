@@ -325,6 +325,7 @@ public class RevloAPI {
      * Give a bonus to a Fan
      * @param twichname username of the fan to give the bonus
      * @param amount amount of the bonus (between -1000000 and 1000000)
+     * @return Fan instance
      * @throws RevloException If the connection is failed or amount is invalid
      */
     public Fan giveBonus(String twichname,int amount) throws RevloException{
