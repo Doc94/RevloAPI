@@ -2,17 +2,22 @@ package net.mrdoc.revloapi.utils;
 
 import net.mrdoc.revloapi.exception.RevloException;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Doc on 10-01-2017.
@@ -95,7 +100,19 @@ public class RevloUtils {
 
         System.out.println(urlbase+parameter);
 
-        getRequest.setEntity(new StringEntity(postParameters.toString()));
+        List<NameValuePair> urlParameters = new ArrayList<NameValuePair>();
+
+        for(String keyparam : postParameters.keySet()) {
+            urlParameters.add(new BasicNameValuePair(keyparam, postParameters.getString(keyparam)));
+        }
+
+        try {
+            getRequest.setEntity(new UrlEncodedFormEntity(urlParameters));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        //getRequest.setEntity(new StringEntity(postParameters.toString()));
 
         //Set all headers
         getRequest.addHeader("x-api-key",key);
