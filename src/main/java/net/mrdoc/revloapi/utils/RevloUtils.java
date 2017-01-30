@@ -95,11 +95,7 @@ public class RevloUtils {
 
         System.out.println(urlbase+parameter);
 
-        try {
-            getRequest.setEntity(new StringEntity(postParameters.toString()));
-        } catch (UnsupportedEncodingException e) {
-            throw new RevloException(e.getCause());
-        }
+        getRequest.setEntity(new StringEntity(postParameters.toString()));
 
         //Set all headers
         getRequest.addHeader("x-api-key",key);
