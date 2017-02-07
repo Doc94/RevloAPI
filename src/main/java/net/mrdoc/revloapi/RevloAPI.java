@@ -111,12 +111,30 @@ public class RevloAPI {
         for(int pos = 0; pos < cant; pos++) {
             JSONObject jsonReward = jsonRewards.getJSONObject(pos);
 
+            String botcommand = "";
+
+            if(!jsonReward.isNull("bot_command")) {
+                botcommand = jsonReward.getString("bot_command");
+            }
+
+            String description = "";
+
+            if(!jsonReward.isNull("description")) {
+                description = jsonReward.getString("description");
+            }
+
+            String imgurl = "";
+
+            if(!jsonReward.isNull("img_url")) {
+                imgurl = jsonReward.getString("img_url");
+            }
+
             Reward reward = new Reward(
                     jsonReward.getInt("reward_id"),
                     jsonReward.getString("title"),
-                    jsonReward.getString("description"),
-                    jsonReward.getString("img_url"),
-                    jsonReward.getString("bot_command"),
+                    description,
+                    imgurl,
+                    botcommand,
                     LocalDateTime.parse(jsonReward.getString("created_at"), DATEFORMATTER),
                     jsonReward.getInt("points"),
                     jsonReward.getBoolean("enabled"),
